@@ -7,8 +7,8 @@ public class BattleShip {
     private static String[][] ships;
 
     public static void main(String[] args){
-        gameBoard = new String[5][5];
-        ships = new String[5][5];
+        gameBoard = new String[5][5]; // gameboard with five rows and five col
+        ships = new String[5][5]; // ships to be places with five rows and five col
         int count = 1;
         initializeGame();
         displayGameBoard();
@@ -32,7 +32,6 @@ public class BattleShip {
             }
 
             for(int col=0; col<=gameBoard[row].length-1; col++){
-//                if(row >0)//display row
 
                 if(col < 4) {//display col
                     System.out.printf(" %s | ", gameBoard[row][col]);
@@ -67,8 +66,8 @@ public class BattleShip {
         SecureRandom rng = new SecureRandom();
         for(int count=5; count >0; count--){
             do{
-            row = rng.nextInt(3)+1;
-            col = rng.nextInt(3)+1;
+            row = rng.nextInt(4)+1;
+            col = rng.nextInt(4)+1;
             ships[row][col] = "S";
             } while(ships[row][col].equals(" "));
         }
